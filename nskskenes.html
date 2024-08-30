@@ -1,0 +1,298 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+      name="viewport"
+    />
+    <title>Canva Premium Lifetime</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+        min-height: 100vh;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 20px;
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+      .container {
+        text-align: center;
+        max-width: 1000px;
+        margin: 0 auto;
+        width: 100%;
+        padding: 30px;
+        border-radius: 15px;
+        background: rgba(0, 0, 0, 0.8);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        animation: fadeIn 1.5s ease-out;
+      }
+      h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        color: #32e0c4;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      h1 small {
+        display: block;
+        font-size: 16px;
+        margin-top: 5px;
+        color: #ccc;
+      }
+      p {
+        font-size: 1.1em;
+        margin-bottom: 20px;
+        color: #ccc;
+      }
+      .team-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+      .team-button {
+        background-color: #333;
+        color: #ff007f;
+        padding: 15px 25px;
+        border: 2px solid #ff007f;
+        border-radius: 30px;
+        font-size: 18px;
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        max-width: 650px;
+        position: relative;
+        transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        cursor: pointer;
+      }
+      .team-button span {
+        font-size: 22px;
+        font-weight: 700;
+        margin-right: auto;
+      }
+      .team-button .button-label {
+        background-color: #1a1a1a;
+        border-radius: 20px;
+        padding: 5px 15px;
+        margin-left: 15px;
+        color: #ff007f;
+      }
+      .team-button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(255, 0, 127, 0.5);
+        background: #444;
+      }
+      .password-input {
+        display: none;
+        margin-top: 20px;
+      }
+      .password-input input {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        outline: 0;
+        font-size: 16px;
+        margin-right: 10px;
+      }
+      .password-input button {
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: #ff007f;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+      .password-input button:hover {
+        background-color: #e6006e;
+      }
+      .instructions {
+        margin-top: 20px;
+        text-align: left;
+        color: #ddd;
+      }
+      .instructions h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      .instructions p {
+        font-size: 16px;
+        margin: 10px 0;
+        line-height: 1.5;
+      }
+      .instructions img {
+        max-width: 50%;
+        margin: 10px auto;
+        display: block;
+        border-radius: 10px;
+        border: 3px solid #32e0c4;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .instructions img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+      }
+      .social-icons {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+      .social-icons img {
+        width: 40px;
+        opacity: 0.8;
+        transition: opacity 0.3s;
+      }
+      .social-icons img:hover {
+        opacity: 1;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2em;
+        }
+        .team-button {
+          font-size: 16px;
+          padding: 10px 20px;
+        }
+        .team-button span {
+          font-size: 20px;
+        }
+        .instructions h2 {
+          font-size: 20px;
+        }
+      }
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .modal-content {
+        background-color: #fefefe;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 500px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        animation: slideDown 0.5s ease-out;
+      }
+      .modal-content h2 {
+        color: #333;
+        font-size: 24px;
+      }
+      .modal-content p {
+        font-size: 18px;
+        color: #666;
+      }
+      .modal-buttons {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+      }
+      .modal-buttons .ok-button {
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: #4caf50;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+      .modal-buttons .ok-button:hover {
+        background-color: #45a049;
+      }
+      @keyframes slideDown {
+        from {
+          transform: translateY(-30px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        Canva Premium Lifetime
+<small>via Edu</small>
+        <small>(By Wenzzz)</small>
+      </h1>
+      <p>Select a Team:</p>
+      <div class="team-buttons">
+        <button class="team-button" data-link="https://www.canva.com/brand/join?token=%2D%51%4A%4E%4F%70%44%31%49%74%57%42%70%71%59%53%50%67%34%51%35%77&amp;brandingVariant=%65%64%75&amp;referrer=%74%65%61%6D%2D%69%6E%76%69%74%65">
+          <span>Yuri</span>
+          <div class="button-label">Join</div>
+        </button>
+        <button class="team-button" data-link="https://www.canva.com/brand/join?token=%6A%64%75%31%69%74%6C%61%41%44%39%78%69%43%4B%48%77%64%49%71%64%67&amp;brandingVariant=%65%64%75&amp;referrer=%74%65%61%6D%2D%69%6E%76%69%74%65">
+          <span>Vic</span>
+          <div class="button-label">Join</div>
+        </button>
+        <button class="team-button" data-link="https://www.canva.com/brand/join?token=%2D%51%4A%4E%4F%70%44%31%49%74%57%42%70%71%59%53%50%67%34%51%35%77&amp;brandingVariant=%65%64%75&amp;referrer=%74%65%61%6D%2D%69%6E%76%69%74%65">
+          <span>Rexx</span>
+          <div class="button-label">Join</div>
+        </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.querySelectorAll(".team-button").forEach((button) => {
+        button.addEventListener("click", function () {
+          const targetLink = this.getAttribute("data-link");
+          window.location.href = targetLink;
+        });
+      });
+      function closeModal() {
+        document.getElementById("messageModal").style.display = "none";
+      }
+      // Show the modal on page load if there is a message
+      window.onload = function () {
+        document.getElementById("modalMessage").innerText = "";
+        document.getElementById("messageModal").style.display = "flex";
+      };
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("contextmenu", function (e) {
+          alert("Inspect Elements Not Allowed"), e.preventDefault();
+        });
+      });
+    </script>
+    <span id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span>
+  </body>
+</html>
